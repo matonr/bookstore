@@ -1,5 +1,6 @@
 <?php
- include('inc/config.php');
+    include('inc/Config.php');
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,9 +47,15 @@ http://www.tooplate.com/view/2092-shelf
                         <ul class="nav nav-fill tm-main-nav-ul">
                             <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Catalogs</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Awards</a></li>
                             <li class="nav-item"><a class="nav-link" href="team.php">Our Team</a></li>
                             <li class="nav-item"><a class="nav-link active" href="contact.php">Contact Us</a></li>
+                            <?php
+                                if (isset($_SESSION['valid']) && $_SESSION['valid'] === true) {
+                                    echo '<li class="nav-item"><a class="nav-link" href="inc/Login/logout.php">Log out</a></li>';
+                                } else {
+                                    echo '<li class="nav-item"><a class="nav-link" href="login.php">Log in</a></li>';
+                                }
+                            ?>
                         </ul>
                     </div>    
                 </nav>
