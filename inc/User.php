@@ -8,7 +8,7 @@
 
         function get_users(){
             try{
-                $query =  $this->db->conn->query("SELECT * FROM users");
+                $query = $this->db->conn->query("SELECT * FROM users");
                 $users = $query->fetchAll(PDO::FETCH_OBJ);
                 return $users;
               }
