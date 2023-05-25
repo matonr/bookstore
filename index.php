@@ -14,13 +14,13 @@
                         <div class="row">
                         <?php
                             $books = $Book->get_books();
-                            for ($i=0;$i<count($books);$i++){
+                            foreach ($books as $book){
                                 echo '<figure class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">';
                                 echo    '<a href="preview.html">';
                                 echo        '<div class="tm-gallery-item-overlay">';
-                                echo            '<img src="'.$books[$i]->image.'" alt="Image" class="img-fluid tm-img-center">';
+                                echo            '<img src="'.$book->image.'" alt="Image" class="img-fluid tm-img-center">';
                                 echo        '</div>';
-                                echo        '<p class="tm-figcaption">'.$books[$i]->name.'</p>';
+                                echo        '<p class="tm-figcaption">'.$book->name.'</p>';
                                 echo    '</a>';
                                 echo '</figure>';
                                 }
