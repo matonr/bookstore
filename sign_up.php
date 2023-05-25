@@ -8,10 +8,10 @@
                 <h2 class="tm-blue-text tm-margin-b-p">Sign up</h2>
             </div>
             <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
-                <form action="inc/Sign_up/Sign_up.php" method="post" class="main_form">
-                    <input type="text" name="user_name" placeholder="name"><br>
-                    <input type="user_email" name="user_email" placeholder="email"><br>
-                    <input type="user_password" name="user_password" placeholder="password"><br>
+                <form action="inc/User/Sign_up.php" method="post" class="main_form">
+                    <input type="text" name="user_name" id="user_name" placeholder="name"><br>
+                    <input type="email" name="user_email" id="user_email" placeholder="email"><br>
+                    <input type="password" name="user_password" id="user_password" placeholder="password"><br>
                     <input type="submit" value="Sign up" name="sign_up">
                 </form>
             </div>

@@ -27,7 +27,12 @@ if(isset($_POST['sign_up'])){
                 $query = "INSERT INTO users (user_name, user_email, user_password, token) VALUES (:user_name, :user_email, :user_password, :token)";
                 $query_run = $db->conn->prepare($query);        
                 $query_run->execute($data);
-                header("Location: ../../signed_up.php");
+                if(isset($_SESSION['token']) && $User->check_token($_SESSION['token'])){
+                    header("Location: ../../admin.php");
+                }
+                else{
+                    header("Location: ../../signed_up.php");
+                }
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
